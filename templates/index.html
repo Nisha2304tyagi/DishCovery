@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dishcovery - Café Recommendation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/bg.jpg'); /* Background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white; /* Set text color to white */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full screen height */
+            text-align: center; /* Center align text */
+        }
+
+        div {
+            width: 100%;
+            max-width: 500px;
+            background: rgba(0, 0, 0, 0.6); /* Darker semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.8em;
+            font-family: 'Pacifico', cursive; /* Use a Google Font for better cursive styling */
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            margin-bottom: 1em;
+            font-weight: 300; /* Lighter subtitle font weight */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+
+        input[type="submit"] {
+            background-color: #8BC34A;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #7CB342; /* Slightly darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Dishcovery</h1>
+        <h2>Find cafés tailored to your taste</h2>
+        <form id="cafeForm" action="/recommendation_result" method="POST">
+            <label for="cafeName">Enter Café Name:</label>
+            <input type="text" id="cafeName" name="title" required placeholder="e.g., Café Coffee Day">
+            <label for="location">Enter Locality:</label>
+            <input type="text" id="location" name="location" required placeholder="e.g., Connaught Place">
+            <input type="submit" value="Get Recommendations">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/img.jpg');
+            background-size: cover;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            font-size: 1.1em;
+            color: #666;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if error %}
+            <p>{{ error }}</p>
+        {% elif recommendations %}
+            <h1>Restaurant Recommendations</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Restaurant Name</th>
+                        <th>Cuisines</th>
+                        <th>Aggregate Rating</th>
+                        <th>Address</th>
+                        <th>Average Cost for Two</th>
+                        <th>Cosine Similarity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for recommendation in recommendations %}
+                    <tr>
+                        <td>{{ recommendation['Restaurant Name'] }}</td>
+                        <td>{{ recommendation['Cuisines'] }}</td>
+                        <td>{{ recommendation['Aggregate rating'] }}</td>
+                        <td>{{ recommendation['Address'] }}</td>
+                        <td>₹{{ recommendation['Average Cost for two'] }}</td>
+                        <td>{{ recommendation['Cosine Similarity'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No recommendations available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
