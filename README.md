@@ -1,4 +1,4 @@
-![Uploading Screenshot (227).png…]()
+![Screenshot (227)](https://github.com/user-attachments/assets/b724e15d-9672-4913-8227-7468297992ee)
 
 ![Screenshot (226)](https://github.com/user-attachments/assets/c9d237a0-b39b-459d-88f7-50944bd8e77a)The undertaking we're undertaking is Dishcovery is an innovation and design thinking project aimed at transforming the café discovery journey. 
 With the help of the café finder system Dishcovery, customers may choose cafés that suit their tastes. When users provide their location, preferred meal type, or café references,
